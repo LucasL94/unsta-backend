@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/checkout@v1.0.0
+    - uses: max/awesome-lint@v2.0.0
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
