@@ -26,10 +26,12 @@ exports.postNotifications = async (req, h) => {
   try {
     const notifications = new Notifications(req.payload)
     notifications.tag = req.params.tag
+
     notiEvents.emit('SEND_NOTIFICATION', req.params.tag, {
       title: req.payload.title,
       description: req.payload.description
     })
+
     const result = await notifications.save()
     return h.response(result).code(201)
   } catch (err) {
