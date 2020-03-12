@@ -8,11 +8,11 @@ const mongo = require('./config/mongo');
 
 (async () => {
   const wsserver = new hapi.server({
-    port: 9999
+    port: process.env.PORT || 5001
   })
 
   const server = new hapi.server({
-    port: 8888
+    port: process.env.PORT || 5000
   })
 
   try {
