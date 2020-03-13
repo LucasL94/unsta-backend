@@ -7,13 +7,14 @@ const mongo = require('./config/mongo');
 /* eslint-disable no-console */
 
 (async () => {
-  const wsserver = new hapi.server({
-    port: process.env.PORT || 5001
-  })
-
   const server = new hapi.server({
     port: process.env.PORT || 5000
   })
+
+  const wsserver = new hapi.server({
+    port: 9999
+  })
+
 
   try {
     // Web Socket server
